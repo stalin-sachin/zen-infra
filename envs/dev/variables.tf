@@ -15,3 +15,15 @@ variable "github_org" {
   type        = string
   default     = "ravdy"
 }
+
+variable "github_runner_repo" {
+  description = "Repo-level runner target (e.g. zen-pharma-frontend). Leave empty string for an org-level runner shared across all repos."
+  type        = string
+  default     = ""
+}
+
+variable "github_runner_pat" {
+  description = "GitHub PAT for self-hosted runner registration (stored in Secrets Manager at /pharma/dev/github-runner-pat)"
+  type        = string
+  sensitive   = true
+}
